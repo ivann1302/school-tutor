@@ -1,0 +1,2331 @@
+{
+  "version": "2.11",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 48,
+      "children": [
+        {
+          "type": "frame",
+          "id": "aFvlo",
+          "name": "header",
+          "width": "fill_container",
+          "height": 80,
+          "fill": "#FFFFFF",
+          "cornerRadius": 32,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#F2B435"
+          },
+          "gap": 24,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "LDv2e",
+              "name": "logo",
+              "fill": "#1D1D1D",
+              "content": "Ирина Витальевна",
+              "fontFamily": "Inter",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "g8uYL",
+              "name": "headerSubtitle",
+              "fill": "#4A4A4A",
+              "content": "Репетитор 2–4 классы",
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "FNrBF",
+              "name": "nav",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "og93V",
+                  "name": "nav1",
+                  "fill": "#1D1D1D",
+                  "content": "Обо мне",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "xHALQ",
+                  "name": "nav2",
+                  "fill": "#1D1D1D",
+                  "content": "Кейсы",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "G4SRN3",
+                  "name": "nav3",
+                  "fill": "#1D1D1D",
+                  "content": "Отзывы",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VKLGK",
+                  "name": "nav4",
+                  "fill": "#1D1D1D",
+                  "content": "Примеры уроков",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HbElt",
+              "name": "cta",
+              "width": 220,
+              "height": 56,
+              "fill": "#F5B1C1",
+              "cornerRadius": 28,
+              "stroke": {
+                "thickness": 0,
+                "fill": "#F5B1C1"
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vlJJs",
+                  "name": "ctaText",
+                  "fill": "#1D1D1D",
+                  "content": "Записаться на урок",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U3o1tc",
+          "name": "hero",
+          "width": "fill_container",
+          "height": 520,
+          "gap": 48,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "FaHsO",
+              "name": "heroText",
+              "width": 660,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ZHXGT",
+                  "name": "heroTitle",
+                  "fill": "#1B1B1B",
+                  "textGrowth": "fixed-width",
+                  "width": 660,
+                  "content": "Учеба в начальных классах\nбез стресса и суеты",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Inter",
+                  "fontSize": 56,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "GjD0Y",
+                  "name": "heroDesc",
+                  "fill": "#2F2F2F",
+                  "textGrowth": "fixed-width",
+                  "width": 660,
+                  "content": "Я помогаю детям 2–4 классов полюбить русский язык и математику через уверенные занятия, поддержку и персональный подход.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 19,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "J2WIAv",
+                  "name": "heroButtons",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MKJgP",
+                      "name": "buttonPrimary",
+                      "width": 260,
+                      "height": 56,
+                      "fill": "#F5B1C1",
+                      "cornerRadius": 28,
+                      "stroke": {
+                        "thickness": 0,
+                        "fill": "#F5B1C1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "INv2g",
+                          "name": "buttonPrimaryText",
+                          "fill": "#1D1D1D",
+                          "content": "Заказать пробный урок",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VgTIa",
+                      "name": "buttonSecondary",
+                      "width": 240,
+                      "height": 54,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 32,
+                      "stroke": {
+                        "thickness": 2,
+                        "fill": "#F2B435"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Veirv",
+                          "name": "buttonSecondaryText",
+                          "fill": "#F2B435",
+                          "content": "Скачать оферту",
+                          "fontFamily": "Inter",
+                          "fontSize": 16,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 5,
+                  "id": "edhNd",
+                  "name": "heroAccent",
+                  "fill": "#F2B435",
+                  "width": 140,
+                  "height": 10
+                },
+                {
+                  "type": "text",
+                  "id": "l28lS",
+                  "name": "heroScribble",
+                  "fill": "#B45375",
+                  "content": "Учимся легко и по‑душевному",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "T2kMaq",
+                  "name": "heroNoteAccent",
+                  "fill": "#B45375",
+                  "content": "✍️ Авторская подача",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 5,
+                  "id": "c73kBw",
+                  "name": "heroNoteLine",
+                  "opacity": 0.35,
+                  "fill": "#F5B1C1",
+                  "width": 180,
+                  "height": 10
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UwZ9l",
+              "name": "heroCard",
+              "width": 520,
+              "fill": "#FFF7D0",
+              "cornerRadius": 44,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#F2B43522",
+                "offset": {
+                  "x": 0,
+                  "y": 20
+                },
+                "blur": 40
+              },
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 36,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "aAjR3",
+                  "name": "heroPhoto",
+                  "width": 520,
+                  "height": 320,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./tutor.jpg",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 36,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "c5i0NQ",
+                      "name": "heroPhotoLabel",
+                      "fill": "#1D1D1D",
+                      "content": "Фото Ирины Витальевны",
+                      "fontFamily": "Inter",
+                      "fontSize": 20,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "zhUrp",
+                      "name": "heroPhotoNote",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 440,
+                      "content": "Ваш ребёнок на занятиях чувствует себя спокойно и уверенно",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Sp8p1",
+                  "name": "heroTag",
+                  "fill": "#795000",
+                  "content": "Репетитор начальной школы",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "u37VfG",
+                  "name": "heroName",
+                  "fill": "#1D1D1D",
+                  "content": "Ирина Витальевна",
+                  "fontFamily": "Inter",
+                  "fontSize": 36,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "VVnse",
+                  "name": "heroNote",
+                  "fill": "#4A4A4A",
+                  "textGrowth": "fixed-width",
+                  "width": 460,
+                  "content": "Дети получают результат и спокойный настрой перед школой.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "qwxWn",
+              "layoutPosition": "absolute",
+              "x": 500,
+              "y": 0,
+              "name": "heroDecor",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "skXr8",
+                  "x": 20,
+                  "y": 10,
+                  "name": "heroGlow",
+                  "opacity": 0.45,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "radial",
+                    "enabled": true,
+                    "rotation": 0,
+                    "size": {
+                      "width": 1.2,
+                      "height": 1.2
+                    },
+                    "colors": [
+                      {
+                        "color": "#F9D36E",
+                        "position": 0
+                      },
+                      {
+                        "color": "#F5B1C1",
+                        "position": 1
+                      }
+                    ],
+                    "center": {
+                      "x": 0.35,
+                      "y": 0.35
+                    }
+                  },
+                  "width": 220,
+                  "height": 220
+                },
+                {
+                  "type": "ellipse",
+                  "id": "JUS7C",
+                  "x": 190,
+                  "y": 180,
+                  "name": "heroAccentDot",
+                  "fill": "#F5B1C1",
+                  "width": 40,
+                  "height": 40
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 7,
+                  "id": "ZSOe6",
+                  "x": 40,
+                  "y": 170,
+                  "name": "heroAccentLine",
+                  "opacity": 0.65,
+                  "rotation": -12.000000000000002,
+                  "fill": "#F5B1C1",
+                  "width": 180,
+                  "height": 14
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kkkLK",
+          "name": "highlight",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 40,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#F2B435"
+          },
+          "layout": "vertical",
+          "gap": 18,
+          "padding": 40,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Lz98l",
+              "name": "highlightTitle",
+              "fill": "#1D1D1D",
+              "textGrowth": "fixed-width",
+              "width": 1150,
+              "content": "Уроки, где ребёнок учится с интересом, а родители спокойны",
+              "lineHeight": 1.05,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 36,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "EhBQZ",
+              "name": "highlightText",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 920,
+              "content": "Мы делаем упор на поддержку, понятные объяснения и комфортный темп — без громких слов и лишнего стресса.",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "EtkR7",
+              "name": "highlightGoals",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "b5hAN",
+                  "name": "goal1",
+                  "width": 320,
+                  "fill": "#FFF8D5",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    24,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OTm1G",
+                      "name": "goal1icon",
+                      "content": "🎓",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "a8MUYa",
+                      "name": "goal1title",
+                      "fill": "#1D1D1D",
+                      "content": "Спокойная подача",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w1CPa",
+                      "name": "goal1desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 260,
+                      "content": "Маленькие шаги, понятные задания и уверенность после каждого урока.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "VxXr7",
+                  "name": "goal2",
+                  "width": 320,
+                  "fill": "#FFF8D5",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    24,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "djaKc",
+                      "name": "goal2icon",
+                      "content": "🤝",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EBQA9",
+                      "name": "goal2title",
+                      "fill": "#1D1D1D",
+                      "content": "Поддержка родителей",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S8TwaQ",
+                      "name": "goal2desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 260,
+                      "content": "Я объясняю задания и даю наглядные решения для дома.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "o4hA7",
+                  "name": "goal3",
+                  "width": 320,
+                  "fill": "#FFF8D5",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "padding": [
+                    24,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "hOFup",
+                      "name": "goal3icon",
+                      "content": "✨",
+                      "fontFamily": "Inter",
+                      "fontSize": 32,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "gpgAd",
+                      "name": "goal3title",
+                      "fill": "#1D1D1D",
+                      "content": "Индивидуальный темп",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "c6XaD",
+                      "name": "goal3desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 260,
+                      "content": "Уроки строятся по уровню ребёнка — ни спешки, ни пауз без дела.",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "oLktb",
+          "name": "about",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "gap": 36,
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "OI8YK",
+              "name": "aboutText",
+              "width": 660,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ct67U",
+                  "name": "aboutHeading",
+                  "fill": "#1D1D1D",
+                  "content": "Обо мне",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "800"
+                },
+                {
+                  "type": "text",
+                  "id": "HDQ6h",
+                  "name": "aboutLead",
+                  "fill": "#4A4A4A",
+                  "textGrowth": "fixed-width",
+                  "width": 660,
+                  "content": "Я работаю с младшими школьниками и помогаю детям учиться спокойно, без страха и лишнего давления.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "X3j7w",
+                  "name": "aboutList",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dO5Yx",
+                      "name": "aboutItem1",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 660,
+                      "content": "• 10 лет педагогического опыта в начальных классах",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "J2ryw",
+                      "name": "aboutItem2",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 660,
+                      "content": "• Репетитор русского языка и математики для 2–4 классов",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pV6OA",
+                      "name": "aboutItem3",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 660,
+                      "content": "• Занятия, где ребёнок делает шаг вперёд и не боится следующего урока",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HfH2C",
+                  "name": "aboutBadge",
+                  "width": 320,
+                  "fill": "#FFECB8",
+                  "cornerRadius": 24,
+                  "padding": [
+                    12,
+                    18
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "UBmKt",
+                      "name": "aboutBadgeText",
+                      "fill": "#795000",
+                      "content": "Персонально для вашего ребёнка",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z2KlH4",
+                  "name": "authorTag",
+                  "fill": "#FFEBF2",
+                  "cornerRadius": 24,
+                  "padding": [
+                    10,
+                    14
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WGVic",
+                      "name": "authorTagText",
+                      "fill": "#B45375",
+                      "content": "Авторская методика для каждого",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VFrWH",
+              "name": "aboutPhoto",
+              "width": 640,
+              "height": 380,
+              "fill": "#FFF4C5",
+              "cornerRadius": 40,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#F2B435"
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "XWCe0",
+                  "name": "photoDot",
+                  "fill": "#F2B435",
+                  "width": 140,
+                  "height": 140
+                },
+                {
+                  "type": "ellipse",
+                  "id": "uIg6D",
+                  "name": "photoSmall",
+                  "fill": "#FFF4C5",
+                  "width": 100,
+                  "height": 100
+                },
+                {
+                  "type": "text",
+                  "id": "QrCF4",
+                  "name": "photoText",
+                  "fill": "#1D1D1D",
+                  "content": "Фото Ирины",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "gV4gQ",
+              "layoutPosition": "absolute",
+              "x": 520,
+              "y": 20,
+              "name": "aboutDecor",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "P2Eay",
+                  "x": 20,
+                  "y": 140,
+                  "name": "aboutDot1",
+                  "fill": "#F2B435",
+                  "width": 18,
+                  "height": 18
+                },
+                {
+                  "type": "ellipse",
+                  "id": "FLnIi",
+                  "x": 164,
+                  "y": 32,
+                  "name": "aboutDot2",
+                  "fill": "#F5B1C1",
+                  "width": 14,
+                  "height": 14
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 6,
+                  "id": "Ae9TI",
+                  "x": 40,
+                  "y": 80,
+                  "name": "aboutWavy",
+                  "opacity": 0.65,
+                  "rotation": 18,
+                  "fill": "#F5B1C1",
+                  "width": 130,
+                  "height": 12
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "iMsS3",
+          "name": "cases",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "fNT5X",
+              "name": "casesHeading",
+              "fill": "#1D1D1D",
+              "content": "Кейсы моих учеников",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "PF8KX",
+              "name": "casesGrid",
+              "width": "fill_container",
+              "gap": 18,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J8xko",
+                  "name": "case1",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tXDo8",
+                      "name": "case1title",
+                      "fill": "#1D1D1D",
+                      "content": "Переход в четвёртый класс",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Yrz4X",
+                      "name": "case1desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "У ученика появилась уверенность в задачах и чтении по тексту.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "C868u",
+                      "name": "case1meta",
+                      "fill": "#795000",
+                      "content": "Результат: оценки «4» и «5» в контрольной",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pR9iG",
+                      "name": "caseStar1",
+                      "fill": "#F5B1C1",
+                      "content": "⭐",
+                      "fontFamily": "Inter",
+                      "fontSize": 26,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iIOgG",
+                  "name": "case2",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HntAC",
+                      "name": "case2title",
+                      "fill": "#1D1D1D",
+                      "content": "Подготовка к проверочной",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "d7Ppo",
+                      "name": "case2desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "Работа над ошибками и спокойный разбор тем повысили уверенность ребёнка.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "l8n1Gy",
+                      "name": "case2meta",
+                      "fill": "#795000",
+                      "content": "Результат: меньше волнений перед контрольной",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pHJBc",
+                      "name": "caseStar2",
+                      "fill": "#F5B1C1",
+                      "content": "⭐",
+                      "fontFamily": "Inter",
+                      "fontSize": 26,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zftpP",
+                  "name": "case3",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "XIwcW",
+                      "name": "case3title",
+                      "fill": "#1D1D1D",
+                      "content": "Разбор домашней работы",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wfx3q",
+                      "name": "case3desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "Системный подход к заданиям помогает ребёнку не теряться и работать легко.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cBJN6",
+                      "name": "case3meta",
+                      "fill": "#795000",
+                      "content": "Результат: стабильная успеваемость и доверие к учителю",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "iODdC",
+                      "name": "caseStar3",
+                      "fill": "#F5B1C1",
+                      "content": "⭐",
+                      "fontFamily": "Inter",
+                      "fontSize": 26,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "EW1jP",
+              "layoutPosition": "absolute",
+              "x": 1080,
+              "y": 12,
+              "name": "casesDecor",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mN2St",
+                  "x": 120,
+                  "y": 8,
+                  "name": "casesSparkle",
+                  "fill": "#F5B1C1",
+                  "content": "✨",
+                  "fontFamily": "Inter",
+                  "fontSize": 34,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "ellipse",
+                  "id": "UQIib",
+                  "x": 0,
+                  "y": 10,
+                  "name": "casesBlob",
+                  "opacity": 0.6,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "radial",
+                    "enabled": true,
+                    "rotation": 0,
+                    "size": {
+                      "width": 1.1,
+                      "height": 1.1
+                    },
+                    "colors": [
+                      {
+                        "color": "#FFF1A8",
+                        "position": 0
+                      },
+                      {
+                        "color": "#F2B43500",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 140,
+                  "height": 140
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZCjbj",
+          "name": "reviews",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 40,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#F2B435"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "NoTmR",
+              "name": "reviewsHeading",
+              "fill": "#1D1D1D",
+              "content": "Отзывы родителей",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "ESu7W",
+              "name": "reviewsGrid",
+              "width": "fill_container",
+              "gap": 18,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "t9gWfs",
+                  "name": "review1",
+                  "width": 680,
+                  "fill": "#FFE9A8",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BTocP",
+                      "name": "review1text",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 624,
+                      "content": "«Ирина сразу нашла подход к сыну — сейчас он с радостью делает задания и перестал бояться диктантов.»",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "wtd8R",
+                      "name": "review1author",
+                      "fill": "#795000",
+                      "content": "— Марина, мама ученика 3 класса",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EszMd",
+                      "name": "reviewIcon1",
+                      "content": "⭐",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "muGlc",
+                  "name": "review2",
+                  "width": 680,
+                  "fill": "#FFE9A8",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RYFv2",
+                      "name": "review2text",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 624,
+                      "content": "«Уроки проходят спокойно, материал понятен, а домашка становится короче — ребёнок стал увереннее.»",
+                      "lineHeight": 1.7,
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "a31NsX",
+                      "name": "review2author",
+                      "fill": "#795000",
+                      "content": "— Елена, мама ученицы 2 класса",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s4iy57",
+                      "name": "reviewIcon2",
+                      "content": "⭐",
+                      "fontFamily": "Inter",
+                      "fontSize": 24,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "TF7oq",
+          "name": "lessons",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 40,
+          "stroke": {
+            "thickness": 1,
+            "fill": "#F2B435"
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "EHpix",
+              "name": "lessonsHeading",
+              "fill": "#1D1D1D",
+              "content": "Примеры уроков",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "f4TyZz",
+              "name": "lessonCards",
+              "width": "fill_container",
+              "gap": 18,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OQQaB",
+                  "name": "lesson1",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "O9C5CV",
+                      "name": "lesson1title",
+                      "fill": "#1D1D1D",
+                      "content": "Русский язык: чтение и грамматика",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "V8waz",
+                      "name": "lesson1desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "Тема: работа с текстом, выделение главной мысли и разбор предложений.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "L498W",
+                  "name": "lesson2",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BOguZ",
+                      "name": "lesson2title",
+                      "fill": "#1D1D1D",
+                      "content": "Математика: задача и проверка",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "u5PGN7",
+                      "name": "lesson2desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "Тема: решение задач на действия и объяснение решения простыми словами.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d4UTKH",
+                  "name": "lesson3",
+                  "width": 440,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 32,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 28,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jo1uJ",
+                      "name": "lesson3title",
+                      "fill": "#1D1D1D",
+                      "content": "Подготовка к проверочной работе",
+                      "fontFamily": "Inter",
+                      "fontSize": 18,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "o8qWVQ",
+                      "name": "lesson3desc",
+                      "fill": "#4A4A4A",
+                      "textGrowth": "fixed-width",
+                      "width": 384,
+                      "content": "Тема: повторение тем, тренировка с минимальным волнением и понятными критериями.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nsgJs",
+          "name": "links",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "layout": "vertical",
+          "gap": 20,
+          "children": [
+            {
+              "type": "text",
+              "id": "ZWDDX",
+              "name": "linksHeading",
+              "fill": "#1D1D1D",
+              "content": "Личные кабинеты учеников",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "KMQ6C",
+              "name": "linksRow",
+              "width": "fill_container",
+              "gap": 18,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jMgNN",
+                  "name": "link1",
+                  "width": 320,
+                  "height": 72,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 28,
+                  "padding": [
+                    18,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Xbyro",
+                      "name": "link1text",
+                      "fill": "#1D1D1D",
+                      "content": "Кабинет ученика №1",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mEpGR",
+                  "name": "link2",
+                  "width": 320,
+                  "height": 72,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 28,
+                  "padding": [
+                    18,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H6K9q",
+                      "name": "link2text",
+                      "fill": "#1D1D1D",
+                      "content": "Кабинет ученика №2",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "iNjgt",
+                  "name": "link3",
+                  "width": 320,
+                  "height": 72,
+                  "fill": "#FFF4C5",
+                  "cornerRadius": 28,
+                  "padding": [
+                    18,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qb7NA",
+                      "name": "link3text",
+                      "fill": "#1D1D1D",
+                      "content": "Кабинет ученика №3",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NjzcZ",
+          "name": "photos",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "layout": "vertical",
+          "gap": 22,
+          "padding": [
+            18,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "rpSqX",
+              "name": "photosHeading",
+              "fill": "#1D1D1D",
+              "content": "Как проходят мои занятия",
+              "fontFamily": "Inter",
+              "fontSize": 30,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "pTAGk",
+              "name": "photosGrid",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PLqJ1",
+                  "name": "photo1",
+                  "width": 320,
+                  "fill": "#FFECB8",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "padding": 22,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "T68VNT",
+                      "name": "photo1img",
+                      "width": 276,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./tutor.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 24,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "O9CcX",
+                      "name": "photo1label",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 276,
+                      "content": "Разбор задания вместе",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Q4O5wO",
+                  "name": "photo2",
+                  "width": 320,
+                  "fill": "#FFECB8",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "padding": 22,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "w7MGC",
+                      "name": "photo2img",
+                      "width": 276,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./tutor.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 24,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "XUVB1",
+                      "name": "photo2label",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 276,
+                      "content": "Игровая работа с задачами",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "eIvQr",
+                  "name": "photo3",
+                  "width": 320,
+                  "fill": "#FFECB8",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "padding": 22,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hAwNx",
+                      "name": "photo3img",
+                      "width": 276,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./tutor.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 24,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "x8Stc",
+                      "name": "photo3label",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 276,
+                      "content": "Тихий уютный урок",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "enqJT",
+                  "name": "photo4",
+                  "width": 320,
+                  "fill": "#FFECB8",
+                  "cornerRadius": 28,
+                  "layout": "vertical",
+                  "padding": 22,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "DQSkd",
+                      "name": "photo4img",
+                      "width": 276,
+                      "height": 200,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./tutor.jpg",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 24,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center"
+                    },
+                    {
+                      "type": "text",
+                      "id": "u4qPjJ",
+                      "name": "photo4label",
+                      "fill": "#1D1D1D",
+                      "textGrowth": "fixed-width",
+                      "width": 276,
+                      "content": "Результат в тетрадях",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "OqbF2",
+      "x": 1560,
+      "y": 0,
+      "name": "mobile",
+      "width": 420,
+      "fill": "#FFFFFF",
+      "cornerRadius": 36,
+      "stroke": {
+        "thickness": 1,
+        "fill": "#F2B43522"
+      },
+      "layout": "vertical",
+      "gap": 22,
+      "padding": 20,
+      "children": [
+        {
+          "type": "frame",
+          "id": "KnX2A",
+          "name": "mobileTop",
+          "width": "fill_container",
+          "height": 64,
+          "gap": 12,
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ld3On",
+              "name": "mobileLogo",
+              "fill": "#1D1D1D",
+              "content": "Ирина Витальевна",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 14,
+              "id": "uyGuC",
+              "name": "mobileMenu",
+              "fill": "#F5B1C1",
+              "width": 44,
+              "height": 44
+            },
+            {
+              "type": "frame",
+              "id": "DK0JM",
+              "name": "mobileBadge",
+              "fill": "#FFEBF2",
+              "cornerRadius": 20,
+              "padding": [
+                6,
+                12
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eQWki",
+                  "name": "mobileBadgeText",
+                  "fill": "#B45375",
+                  "content": "Дизайн для родителей",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "AQ4ZS",
+              "name": "mobileStar",
+              "fill": "#F5B1C1",
+              "content": "✿",
+              "fontFamily": "Inter",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vQJOu",
+          "name": "mobileHero",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            20,
+            18
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "JLq0x",
+              "name": "mobileHeroTag",
+              "fill": "#795000",
+              "content": "Репетитор начальных классов",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "BYddU",
+              "name": "mobileHeroTitle",
+              "fill": "#1D1D1D",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Учеба без стресса для 2–4 классов",
+              "lineHeight": 1.1,
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "f1V9T",
+              "name": "mobileHeroDesc",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Дружелюбные уроки по русскому и математике, понятные ребёнку и спокойные для родителей.",
+              "lineHeight": 1.7,
+              "fontFamily": "Inter",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "T9slNU",
+              "name": "mobileHeroPhoto",
+              "width": "fill_container",
+              "height": 220,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./tutor.jpg",
+                "mode": "fill"
+              },
+              "cornerRadius": 28,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#F5B1C1"
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            {
+              "type": "frame",
+              "id": "nchSN",
+              "name": "mobileHeroButtons",
+              "width": "fill_container",
+              "gap": 14,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "AwDXb",
+                  "name": "mobileBtn1",
+                  "width": 176,
+                  "height": 52,
+                  "fill": "#F5B1C1",
+                  "cornerRadius": 28,
+                  "stroke": {
+                    "thickness": 0,
+                    "fill": "#F5B1C1"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S9HnYf",
+                      "name": "mobileBtn1Text",
+                      "fill": "#1D1D1D",
+                      "content": "Записаться",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bCoaw",
+                  "name": "mobileBtn2",
+                  "width": 176,
+                  "height": 52,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 28,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#F5B1C1"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lScjS",
+                      "name": "mobileBtn2Text",
+                      "fill": "#F5B1C1",
+                      "content": "Оферта",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Gn0iB",
+              "name": "mobileHighlight",
+              "width": "fill_container",
+              "fill": "#FFEBF2",
+              "cornerRadius": 28,
+              "padding": [
+                12,
+                14
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p1OCN",
+                  "name": "mobileHighlightText",
+                  "fill": "#B45375",
+                  "content": "Авторские уроки без спешки",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "r0GaV",
+          "name": "mobileSection1",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "FazSb",
+              "name": "mobileSection1Title",
+              "fill": "#1D1D1D",
+              "content": "Обо мне",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "yIlp9",
+              "name": "mobileSection1Text",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 384,
+              "content": "Я работаю с младшими школьниками и создаю уроки, где ребёнок чувствует себя спокойно и учится с удовольствием.",
+              "lineHeight": 1.75,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "C5o6j",
+          "name": "mobileSection2",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 14,
+          "children": [
+            {
+              "type": "text",
+              "id": "pTX0P",
+              "name": "mobileSection2Title",
+              "fill": "#1D1D1D",
+              "content": "Кейсы учеников",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "s8YHL",
+              "name": "mobileCase1",
+              "width": "fill_container",
+              "fill": "#FFF7D0",
+              "cornerRadius": 28,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "W0qJdz",
+                  "name": "mobileCase1Title",
+                  "fill": "#1D1D1D",
+                  "content": "Уверенность перед проверочной",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "ZP9bU",
+                  "name": "mobileCase1Desc",
+                  "fill": "#4A4A4A",
+                  "textGrowth": "fixed-width",
+                  "width": 360,
+                  "content": "Система разбора ошибок и понятные объяснения помогли ребёнку справляться с задачами спокойнее.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "k746Zw",
+          "name": "mobileSection3",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 14,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "jq5xw",
+              "name": "mobileSection3Title",
+              "fill": "#1D1D1D",
+              "content": "Отзывы родителей",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "Ufwrk",
+              "name": "mobileReview1",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 384,
+              "content": "«Ирина помогла сыну полюбить уроки. Теперь он увереннее выполняет домашку.» — семья К.",
+              "lineHeight": 1.7,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lcjtF",
+          "name": "mobileSection4",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "t3PvVY",
+              "name": "mobileSection4Title",
+              "fill": "#1D1D1D",
+              "content": "Примеры уроков",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "a8aWZ",
+              "name": "mobileLesson1",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 384,
+              "content": "Русский: ясное чтение текста и разбор предложений.",
+              "lineHeight": 1.7,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "WAXnx",
+              "name": "mobileLesson2",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 384,
+              "content": "Математика: простые задачи и игровые объяснения действий.",
+              "lineHeight": 1.7,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "c781k",
+          "name": "mobileSection5",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 18,
+          "children": [
+            {
+              "type": "text",
+              "id": "b7vje",
+              "name": "mobileSection5Title",
+              "fill": "#1D1D1D",
+              "content": "Личные кабинеты",
+              "fontFamily": "Inter",
+              "fontSize": 18,
+              "fontWeight": "800"
+            },
+            {
+              "type": "frame",
+              "id": "SNXVQ",
+              "name": "mobileLink1",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#F5B1C1"
+              },
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "UjbrU",
+                  "name": "mobileLink1Text",
+                  "fill": "#1D1D1D",
+                  "content": "Кабинет №1",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xVoCp",
+              "name": "mobileLink2",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#FFFFFF",
+              "cornerRadius": 20,
+              "stroke": {
+                "thickness": 1,
+                "fill": "#F5B1C1"
+              },
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tESqo",
+                  "name": "mobileLink2Text",
+                  "fill": "#1D1D1D",
+                  "content": "Кабинет №2",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Fdq0n",
+          "name": "mobileFooter",
+          "width": "fill_container",
+          "fill": "#FFF7D0",
+          "cornerRadius": 32,
+          "layout": "vertical",
+          "gap": 10,
+          "padding": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "CADhS",
+              "name": "mobileFooterText",
+              "fill": "#4A4A4A",
+              "textGrowth": "fixed-width",
+              "width": 380,
+              "content": "Контакты и договор-оферта доступны тут.",
+              "lineHeight": 1.7,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "id": "ABO6i",
+          "layoutPosition": "absolute",
+          "x": 10,
+          "y": 110,
+          "name": "mobileDecor",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "galWI",
+              "x": 0,
+              "y": 0,
+              "name": "mobileDot",
+              "fill": "#F5B1C1",
+              "width": 24,
+              "height": 24
+            },
+            {
+              "type": "ellipse",
+              "id": "qMqvY",
+              "x": 40,
+              "y": 42,
+              "name": "mobileDot2",
+              "fill": "#F2B435",
+              "width": 12,
+              "height": 12
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent": {
+      "type": "color",
+      "value": "#E9558D"
+    },
+    "accent-strong": {
+      "type": "color",
+      "value": "#B63F6D"
+    },
+    "deep": {
+      "type": "color",
+      "value": "#33252B"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-heading": {
+      "type": "string",
+      "value": "Geist"
+    },
+    "gold": {
+      "type": "color",
+      "value": "#F6B52E"
+    },
+    "ink": {
+      "type": "color",
+      "value": "#1F1D1E"
+    },
+    "line": {
+      "type": "color",
+      "value": "#F0D99B"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#625C61"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#FFFDF8"
+    },
+    "surface-card": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "surface-soft": {
+      "type": "color",
+      "value": "#FFF3C8"
+    }
+  }
+}
