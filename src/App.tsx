@@ -1,3 +1,4 @@
+import { useEffect, type CSSProperties } from 'react';
 import arrowImage from './assets/images/optimized/tutor-arrow.webp';
 import betweenSectionImage from './assets/images/optimized/betwenSection.webp';
 import booksImage from './assets/images/optimized/tutor-books.webp';
@@ -60,10 +61,37 @@ const cabinetLinks = [
 const phone = '+7 000 000-00-00';
 const phoneHref = 'tel:+70000000000';
 
+const revealStyle = (delay: number) => ({ '--reveal-delay': `${delay}ms` }) as CSSProperties;
+
 export default function App() {
+  useEffect(() => {
+    const revealItems = document.querySelectorAll<HTMLElement>('.reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.12 },
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main>
-      <header className="site-header">
+      <header className="site-header reveal reveal-down">
         <a className="brand" href="#top" aria-label="На главную">
           <strong>Ирина Витальевна</strong>
         </a>
@@ -80,7 +108,7 @@ export default function App() {
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-card hero-copy">
+        <div className="hero-card hero-copy reveal" style={revealStyle(90)}>
           <p className="eyebrow">Русский язык и математика для 2-4 классов</p>
           <h1 id="hero-title">
             Учеба в начальных классах <span>без стресса</span>
@@ -94,9 +122,9 @@ export default function App() {
             <a className="primary-button" href={phoneHref}>Записаться по телефону</a>
             <span className="soft-note">без формы и лишних шагов</span>
           </div>
-          <img className="decor decor-arrow" src={arrowImage} alt="" aria-hidden="true" />
+          <img className="decor decor-arrow reveal reveal-pop" style={revealStyle(520)} src={arrowImage} alt="" aria-hidden="true" />
         </div>
-        <div className="hero-card hero-about" id="about">
+        <div className="hero-card hero-about reveal" id="about" style={revealStyle(190)}>
           <div className="portrait">
             <img src={tutorFaceImage} alt="Ирина Витальевна" />
           </div>
@@ -120,15 +148,15 @@ export default function App() {
         <img src={betweenSectionImage} alt="" />
       </div>
 
-      <section className="section support" id="support" aria-labelledby="support-title">
-        <img className="decor decor-books" src={booksImage} alt="" aria-hidden="true" />
-        <div className="section-heading">
+      <section className="section support reveal" id="support" aria-labelledby="support-title">
+        <img className="decor decor-books reveal reveal-pop" style={revealStyle(260)} src={booksImage} alt="" aria-hidden="true" />
+        <div className="section-heading reveal" style={revealStyle(80)}>
           <p className="eyebrow">когда стоит прийти</p>
           <h2 id="support-title">Для кого занятия</h2>
         </div>
         <div className="support-grid">
-          {supportAreas.map((area) => (
-            <article className="support-card" key={area}>
+          {supportAreas.map((area, index) => (
+            <article className="support-card reveal" style={revealStyle(120 + index * 55)} key={area}>
               <span aria-hidden="true">♡</span>
               <p>{area}</p>
             </article>
@@ -136,15 +164,15 @@ export default function App() {
         </div>
       </section>
 
-      <section className="section cases" id="cases" aria-labelledby="cases-title">
-        <img className="decor decor-star" src={starImage} alt="" aria-hidden="true" />
-        <div className="section-heading">
+      <section className="section cases reveal" id="cases" aria-labelledby="cases-title">
+        <img className="decor decor-star reveal reveal-pop" style={revealStyle(260)} src={starImage} alt="" aria-hidden="true" />
+        <div className="section-heading reveal" style={revealStyle(80)}>
           <p className="eyebrow">маленькие победы</p>
           <h2 id="cases-title">Кейсы учеников</h2>
         </div>
         <div className="case-grid">
-          {studentCases.map((item) => (
-            <article className="case-card" key={item.title}>
+          {studentCases.map((item, index) => (
+            <article className="case-card reveal" style={revealStyle(130 + index * 75)} key={item.title}>
               <span>{item.mark}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
@@ -157,20 +185,20 @@ export default function App() {
         <img src={betweenSectionImage} alt="" />
       </div>
 
-      <section className="section reviews" aria-labelledby="reviews-title">
-        <img className="decor decor-heart" src={heartImage} alt="" aria-hidden="true" />
-        <div className="section-heading">
+      <section className="section reviews reveal" aria-labelledby="reviews-title">
+        <img className="decor decor-heart reveal reveal-pop" style={revealStyle(260)} src={heartImage} alt="" aria-hidden="true" />
+        <div className="section-heading reveal" style={revealStyle(80)}>
           <p className="eyebrow">пока демонстрационные</p>
           <h2 id="reviews-title">Отзывы</h2>
         </div>
         <div className="review-grid">
-          {reviews.map((review) => (
-            <blockquote key={review}>{review}</blockquote>
+          {reviews.map((review, index) => (
+            <blockquote className="reveal" style={revealStyle(130 + index * 75)} key={review}>{review}</blockquote>
           ))}
         </div>
       </section>
 
-      <section className="section offer" id="offer" aria-labelledby="offer-title">
+      <section className="section offer reveal" id="offer" aria-labelledby="offer-title">
         <div>
           <p className="scribble">для Vercel</p>
           <h2 id="offer-title">Договор-оферта</h2>
@@ -185,13 +213,13 @@ export default function App() {
         </a>
       </section>
 
-      <section className="section lessons" id="lessons" aria-labelledby="lessons-title">
-        <div className="section-heading wide">
+      <section className="section lessons reveal" id="lessons" aria-labelledby="lessons-title">
+        <div className="section-heading wide reveal" style={revealStyle(80)}>
           <p className="eyebrow">как проходит занятие</p>
           <h2 id="lessons-title">Примеры моих уроков</h2>
         </div>
         <div className="lessons-showcase">
-          <div className="laptop" aria-label="Заглушка изображения урока на ноутбуке">
+          <div className="laptop reveal" style={revealStyle(140)} aria-label="Заглушка изображения урока на ноутбуке">
             <div className="laptop-screen">
               <div className="lesson-preview">
                 <span>урок 03</span>
@@ -203,7 +231,7 @@ export default function App() {
           </div>
           <div className="lesson-list">
             {lessonExamples.map((lesson, index) => (
-              <article className="lesson-card" key={lesson}>
+              <article className="lesson-card reveal" style={revealStyle(170 + index * 65)} key={lesson}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <p>{lesson}</p>
               </article>
@@ -212,15 +240,15 @@ export default function App() {
         </div>
       </section>
 
-      <section className="section cabinets" aria-labelledby="cabinets-title">
-        <img className="decor decor-plane" src={planeImage} alt="" aria-hidden="true" />
-        <div className="section-heading">
+      <section className="section cabinets reveal" aria-labelledby="cabinets-title">
+        <img className="decor decor-plane reveal reveal-pop" style={revealStyle(260)} src={planeImage} alt="" aria-hidden="true" />
+        <div className="section-heading reveal" style={revealStyle(80)}>
           <p className="eyebrow">примерные ссылки</p>
           <h2 id="cabinets-title">Личные кабинеты учеников</h2>
         </div>
         <div className="cabinet-grid">
-          {cabinetLinks.map((cabinet) => (
-            <a className="cabinet-card" href={phoneHref} key={cabinet}>
+          {cabinetLinks.map((cabinet, index) => (
+            <a className="cabinet-card reveal" style={revealStyle(130 + index * 75)} href={phoneHref} key={cabinet}>
               <span>{cabinet}</span>
               <small>материалы, задания, прогресс по двум предметам</small>
             </a>
@@ -232,20 +260,20 @@ export default function App() {
         <img className="footer-section-plane" src={sectionPlaneImage} alt="" />
       </div>
 
-      <footer className="footer" id="contacts">
-        <div className="footer-board">
+      <footer className="footer reveal" id="contacts">
+        <div className="footer-board reveal" style={revealStyle(90)}>
           <p className="eyebrow">контакты</p>
           <div className="footer-title-row">
             <h2>Записаться онлайн</h2>
           </div>
           <p>Первый разговор нужен не для продажи, а чтобы понять, где ребенку сейчас трудно.</p>
           <ol className="footer-steps">
-            <li>Позвоните Ирине Витальевне</li>
-            <li>Расскажите, что вызывает сложности в русском или математике</li>
-            <li>Договоритесь о первом занятии</li>
+            <li className="reveal" style={revealStyle(150)}>Позвоните Ирине Витальевне</li>
+            <li className="reveal" style={revealStyle(210)}>Расскажите, что вызывает сложности в русском или математике</li>
+            <li className="reveal" style={revealStyle(270)}>Договоритесь о первом занятии</li>
           </ol>
         </div>
-        <div className="footer-note" aria-label="Записка для родителей">
+        <div className="footer-note reveal" style={revealStyle(170)} aria-label="Записка для родителей">
           <img className="decor decor-phone" src={phoneImage} alt="" aria-hidden="true" />
           <span className="scribble">для родителей</span>
           <p>Если ребенок устал от учебы, начнем мягко: найдем пробелы и уберем тревогу.</p>
