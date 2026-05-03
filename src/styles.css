@@ -351,6 +351,10 @@ small {
   object-position: center 31%;
 }
 
+.hero-about h2 {
+  font-size: clamp(38px, 5vw, 38px);
+}
+
 .stats-grid {
   flex-wrap: wrap;
   gap: 10px;
@@ -433,7 +437,7 @@ small {
   --decor-size: 118px;
   --decor-opacity: 0.52;
   --reveal-rotate: -4deg;
-  top: 36px;
+  top: 241px;
   right: 34px;
   transform: rotate(var(--reveal-rotate));
 }
@@ -470,7 +474,7 @@ small {
 @media (min-width: 921px) {
   .decor-arrow {
     right: 64px;
-    bottom: 335px;
+    bottom: 427px;
   }
 
   .site-header {
@@ -490,6 +494,10 @@ small {
   .hero-about {
     height: 100%;
   }
+
+  .hero-copy {
+    padding-left: calc(clamp(24px, 3.2vw, 42px) + 5px);
+  }
 }
 
 .section-heading {
@@ -502,6 +510,11 @@ small {
 
 .section-heading.wide {
   grid-template-columns: 1fr;
+}
+
+.cabinets .section-heading {
+  grid-template-columns: 1fr;
+  text-align: center;
 }
 
 .case-grid,
@@ -796,6 +809,37 @@ code {
   border-color: rgba(239, 79, 127, 0.28);
 }
 
+.single-cabinet {
+  display: block;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.single-cabinet .cabinet-card {
+  min-height: 220px;
+  padding: clamp(28px, 5vw, 46px);
+  justify-content: center;
+  gap: 18px;
+  background:
+    linear-gradient(90deg, transparent 0 34px, rgba(239, 79, 127, 0.18) 35px 36px, transparent 37px),
+    repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0 30px, rgba(122, 176, 214, 0.18) 31px 32px),
+    linear-gradient(135deg, var(--yellow), var(--pink));
+  border-color: rgba(244, 223, 223, 0.9);
+  transform: rotate(-0.45deg);
+}
+
+.single-cabinet .cabinet-card span {
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.single-cabinet .cabinet-card small {
+  max-width: 520px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
 .footer {
   position: relative;
   display: grid;
@@ -1046,6 +1090,22 @@ code {
 
   .hero {
     padding-top: 18px;
+  }
+
+  .hero-copy {
+    padding-left: 48px;
+  }
+
+  .support {
+    padding-left: 56px;
+  }
+
+  .lesson-preview {
+    padding-left: 44px;
+  }
+
+  .footer {
+    padding-left: 62px;
   }
 
   h1 {

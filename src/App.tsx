@@ -52,14 +52,12 @@ const lessonExamples = [
   'План домашней тренировки на 10 минут в день',
 ];
 
-const cabinetLinks = [
-  'Кабинет ученика 2 класса',
-  'Кабинет ученика 3 класса',
-  'Кабинет ученика 4 класса',
-];
-
-const phone = '+7 000 000-00-00';
-const phoneHref = 'tel:+70000000000';
+const educationExperienceStartYear = 2021;
+const educationExperienceYears = new Date().getFullYear() - educationExperienceStartYear;
+const cabinetExampleLink = 'Пример личного кабинета ученика';
+const phone = '89803781258';
+const phoneHref = `tel:${phone}`;
+const offerDocumentHref = 'https://docs.google.com/document/d/PASTE_DOCUMENT_ID_HERE/edit';
 
 const revealStyle = (delay: number) => ({ '--reveal-delay': `${delay}ms` }) as CSSProperties;
 
@@ -102,7 +100,7 @@ export default function App() {
           <a href="#lessons">Уроки</a>
           <a href="#offer">Оферта</a>
         </nav>
-        <a className="header-phone" href={phoneHref} aria-label="Позвонить Ирине Витальевне">
+        <a className="header-phone" href={phoneHref} aria-label={`Позвонить Ирине Витальевне: ${phone}`}>
           <img src={phoneImage} alt="" aria-hidden="true" />
         </a>
       </header>
@@ -119,8 +117,7 @@ export default function App() {
             потом устойчивый результат.
           </p>
           <div className="hero-actions">
-            <a className="primary-button" href={phoneHref}>Записаться по телефону</a>
-            <span className="soft-note">без формы и лишних шагов</span>
+            <a className="primary-button" href={phoneHref}>Записаться: {phone}</a>
           </div>
           <img className="decor decor-arrow reveal reveal-pop" style={revealStyle(520)} src={arrowImage} alt="" aria-hidden="true" />
         </div>
@@ -133,13 +130,17 @@ export default function App() {
             <h2>Ирина Витальевна</h2>
             <p>
               Репетитор для младших школьников по русскому языку и математике. Объясняю простыми
-              словами, замечаю пробелы и собираю занятия так, чтобы ребенку было понятно и спокойно.
+              словами, замечаю пробелы и организовываю занятия так, чтобы ребенку было понятно и спокойно.
+              Окончила педагогический колледж, опыт работы в сфере образования начальных классов
+              более {educationExperienceYears} лет.
             </p>
           </div>
           <div className="stats-grid" aria-label="Коротко о занятиях">
             <span>2-4 классы</span>
             <span>русский + математика</span>
-            <span>индивидуально</span>
+            <span>индивидуальный формат</span>
+            <span>параллельный формат</span>
+            <span>минигрупповой формат</span>
           </div>
         </div>
       </section>
@@ -200,16 +201,16 @@ export default function App() {
 
       <section className="section offer reveal" id="offer" aria-labelledby="offer-title">
         <div>
-          <p className="scribble">для Vercel</p>
+          <p className="scribble">для родителей</p>
           <h2 id="offer-title">Договор-оферта</h2>
           <p>
-            Сейчас оферта лежит отдельной страницей <code>public/oferta.html</code>. Для редактирования
-            без разработчика лучше позже заменить кнопку на опубликованный Google Docs или Notion:
-            клиент меняет текст там, а сайт ведет на актуальную версию документа.
+            Перед началом занятий вы можете спокойно ознакомиться с условиями оказания услуг.
+            Договор-оферта открыт по ссылке в Google Документе: его можно прочитать онлайн
+            или скачать в удобном формате.
           </p>
         </div>
-        <a className="secondary-button" href="/oferta.html" target="_blank" rel="noreferrer">
-          Открыть оферту
+        <a className="secondary-button" href={offerDocumentHref} target="_blank" rel="noreferrer">
+          Открыть договор-оферту
         </a>
       </section>
 
@@ -243,16 +244,13 @@ export default function App() {
       <section className="section cabinets reveal" aria-labelledby="cabinets-title">
         <img className="decor decor-plane reveal reveal-pop" style={revealStyle(260)} src={planeImage} alt="" aria-hidden="true" />
         <div className="section-heading reveal" style={revealStyle(80)}>
-          <p className="eyebrow">примерные ссылки</p>
-          <h2 id="cabinets-title">Личные кабинеты учеников</h2>
+          <h2 id="cabinets-title">Личный кабинет ученика</h2>
         </div>
-        <div className="cabinet-grid">
-          {cabinetLinks.map((cabinet, index) => (
-            <a className="cabinet-card reveal" style={revealStyle(130 + index * 75)} href={phoneHref} key={cabinet}>
-              <span>{cabinet}</span>
-              <small>материалы, задания, прогресс по двум предметам</small>
-            </a>
-          ))}
+        <div className="cabinet-grid single-cabinet">
+          <a className="cabinet-card reveal" style={revealStyle(130)} href={phoneHref}>
+            <span>{cabinetExampleLink}</span>
+            <small>материалы, задания и динамика занятий собраны в одном месте, чтобы родителям было удобно отслеживать прогресс ребенка</small>
+          </a>
         </div>
       </section>
 
@@ -266,7 +264,6 @@ export default function App() {
           <div className="footer-title-row">
             <h2>Записаться онлайн</h2>
           </div>
-          <p>Первый разговор нужен не для продажи, а чтобы понять, где ребенку сейчас трудно.</p>
           <ol className="footer-steps">
             <li className="reveal" style={revealStyle(150)}>Позвоните Ирине Витальевне</li>
             <li className="reveal" style={revealStyle(210)}>Расскажите, что вызывает сложности в русском или математике</li>
@@ -280,7 +277,7 @@ export default function App() {
           <a className="primary-button" href={phoneHref}>{phone}</a>
         </div>
         <nav className="footer-links" aria-label="Ссылки в футере">
-          <a href="/oferta.html" target="_blank" rel="noreferrer">Оферта</a>
+          <a href={offerDocumentHref} target="_blank" rel="noreferrer">Оферта</a>
           <a href="#lessons">Примеры уроков</a>
           <a href="#cabinets-title">Личные кабинеты</a>
         </nav>
