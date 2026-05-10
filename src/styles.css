@@ -713,7 +713,7 @@ blockquote {
 }
 
 .lessons-showcase .gallery-grid {
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .gallery-card {
@@ -935,87 +935,7 @@ code {
 }
 
 .lessons-showcase {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) 1.05fr;
-  gap: 22px;
-  align-items: stretch;
-}
-
-.laptop {
-  display: grid;
-  align-content: center;
-  min-height: 500px;
-  padding: clamp(20px, 4vw, 40px);
-  border-radius: 34px;
-  background: var(--yellow);
-}
-
-.laptop-screen {
-  position: relative;
-  min-height: 320px;
-  padding: 18px;
-  border: 14px solid #2a2827;
-  border-radius: 30px 30px 18px 18px;
-  background:
-    linear-gradient(135deg, rgba(255, 111, 152, 0.2), rgba(255, 227, 109, 0.24)),
-    #fff8f9;
-  box-shadow: 0 26px 50px rgba(42, 40, 39, 0.14);
-}
-
-.laptop-screen::before {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
-  content: '';
-  transform: translateX(-50%);
-}
-
-.lesson-preview {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 28px;
-  border-radius: 18px;
-  background:
-    linear-gradient(90deg, transparent 0 34px, rgba(239, 79, 127, 0.2) 35px 36px, transparent 37px),
-    repeating-linear-gradient(180deg, transparent 0 29px, rgba(122, 176, 214, 0.2) 30px 31px),
-    radial-gradient(circle at 15% 18%, rgba(255, 227, 109, 0.8), transparent 7rem),
-    linear-gradient(145deg, #ffffff, #fff0f2);
-}
-
-.lesson-preview span {
-  margin-bottom: 16px;
-  color: var(--rose-deep);
-  font-weight: 1000;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.lesson-preview strong {
-  max-width: 420px;
-  margin-bottom: 12px;
-  color: #2a2827;
-  font-size: clamp(34px, 4vw, 58px);
-  line-height: 0.94;
-  letter-spacing: -0.055em;
-}
-
-.lesson-preview p {
-  max-width: 400px;
-  margin-bottom: 0;
-}
-
-.laptop-base {
-  width: 70%;
-  height: 22px;
-  margin: 0 auto;
-  border-radius: 0 0 40px 40px;
-  background: #3a3736;
+  display: block;
 }
 
 .lesson-list {
@@ -1276,13 +1196,8 @@ code {
   .review-grid,
   .support-grid,
   .cabinet-grid,
-  .gallery-grid,
-  .lessons-showcase {
+  .gallery-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .lessons-showcase {
-    grid-template-columns: 1fr;
   }
 
   .decor-arrow,
@@ -1353,10 +1268,6 @@ code {
     padding-left: 56px;
   }
 
-  .lesson-preview {
-    padding-left: 44px;
-  }
-
   .footer {
     padding-left: 62px;
   }
@@ -1370,7 +1281,6 @@ code {
   .support-grid,
   .cabinet-grid,
   .gallery-grid,
-  .lessons-showcase,
   .lesson-list {
     grid-template-columns: 1fr;
   }
@@ -1407,15 +1317,6 @@ code {
   .image-modal-close {
     top: 8px;
     right: 8px;
-  }
-
-  .laptop {
-    min-height: auto;
-  }
-
-  .laptop-screen {
-    min-height: 260px;
-    border-width: 10px;
   }
 
   .decor-arrow,

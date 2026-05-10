@@ -451,16 +451,6 @@ export default function App() {
         </div>
         {renderTabs(lessonCategories, activeLessonCategory, setActiveLessonCategory, 'Категории примеров уроков')}
         <div className="lessons-showcase">
-          <div className="laptop reveal" style={revealStyle(140)} aria-label="Заглушка изображения урока на ноутбуке">
-            <div className="laptop-screen">
-              <div className="lesson-preview">
-                <span>урок 03</span>
-                <strong>Задача + правило</strong>
-                <p>Читаем условие, строим схему, решаем по шагам и закрепляем важное правило.</p>
-              </div>
-            </div>
-            <div className="laptop-base" />
-          </div>
           {renderGallery(currentLessonCategory, 'Пример урока')}
         </div>
       </section>
