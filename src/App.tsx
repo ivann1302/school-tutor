@@ -1,4 +1,4 @@
-import { useEffect, type CSSProperties } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import arrowImage from './assets/images/optimized/tutor-arrow.webp';
 import betweenSectionImage from './assets/images/optimized/betwenSection.webp';
 import booksImage from './assets/images/optimized/tutor-books.webp';
@@ -9,21 +9,69 @@ import sectionPlaneImage from './assets/images/optimized/section-plane.webp';
 import starImage from './assets/images/optimized/tutor-star.webp';
 import tutorFaceImage from './assets/images/optimized/tutor-face.webp';
 
-const studentCases = [
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
+type GalleryItem = {
+  title: string;
+  images: GalleryImage[];
+};
+
+type GalleryCategory = {
+  id: string;
+  title: string;
+  emptyText: string;
+  items: GalleryItem[];
+};
+
+const studentCaseCategories: GalleryCategory[] = [
   {
-    mark: '01',
-    title: 'Почерк и задачи стали понятнее',
-    text: 'За 6 недель ребенок перестал бояться письменных работ и начал спокойнее разбирать условия задач.',
+    id: 'vpr',
+    title: 'ВПР',
+    emptyText: 'Кейсы по подготовке к ВПР скоро появятся.',
+    items: [
+      {
+        title: 'Маша и Софья',
+        images: [
+          { src: '/gallery/student-cases/masha.jpg', alt: 'Кейс ученицы Маши' },
+          { src: '/gallery/student-cases/sofia.png', alt: 'Кейс ученицы Софьи' },
+        ],
+      },
+    ],
   },
   {
-    mark: '02',
-    title: 'Диктанты и примеры без паники',
-    text: 'Разобрали слабые места: орфограммы, вычисления в столбик и проверку ответа. Ошибок стало заметно меньше.',
+    id: 'main-subjects',
+    title: 'Основные предметы',
+    emptyText: 'Кейсы по повышению успеваемости по основным предметам скоро появятся.',
+    items: [
+      {
+        title: 'Аделина и Платон',
+        images: [
+          { src: '/gallery/student-cases/adelina.jpg', alt: 'Кейс ученицы Аделины' },
+          { src: '/gallery/student-cases/platon.jpg', alt: 'Кейс ученика Платона' },
+        ],
+      },
+    ],
   },
   {
-    mark: '03',
-    title: 'Появилась уверенность',
-    text: 'Ученик начал отвечать на уроках и перестал говорить: “у меня все равно не получится”.',
+    id: 'math-progress',
+    title: 'Математика',
+    emptyText: 'Здесь появятся кейсы по повышению успеваемости по математике.',
+    items: [],
+  },
+  {
+    id: 'russian-progress',
+    title: 'Русский язык',
+    emptyText: 'Здесь появятся кейсы по повышению успеваемости по русскому языку.',
+    items: [],
+  },
+  {
+    id: 'handwriting',
+    title: 'Коррекция почерка',
+    emptyText: 'Кейсы по коррекции почерка пока готовятся.',
+    items: [],
   },
 ];
 
@@ -39,17 +87,88 @@ const supportAreas = [
   'подготовка к контрольным и ВПР',
 ];
 
-const reviews = [
-  'Ирина Витальевна быстро нашла подход к сыну. Домашние задания теперь делаем спокойнее, без слез.',
-  'После месяца занятий учительница отметила, что дочка стала внимательнее писать диктанты и решать задачи.',
-  'Нам понравилось, что есть понятная система: повторение, практика, мини-итог и рекомендации родителям.',
+const reviewImages: GalleryImage[] = [
+  { src: '/gallery/parent-reviews/review-01.jpg', alt: 'Отзыв родителя 1' },
+  { src: '/gallery/parent-reviews/review-02.jpg', alt: 'Отзыв родителя 2' },
+  { src: '/gallery/parent-reviews/review-03.jpg', alt: 'Отзыв родителя 3' },
+  { src: '/gallery/parent-reviews/review-04.jpg', alt: 'Отзыв родителя 4' },
+  { src: '/gallery/parent-reviews/review-05.jpg', alt: 'Отзыв родителя 5' },
+  { src: '/gallery/parent-reviews/review-06.jpg', alt: 'Отзыв родителя 6' },
+  { src: '/gallery/parent-reviews/review-07.jpg', alt: 'Отзыв родителя 7' },
+  { src: '/gallery/parent-reviews/review-08.jpg', alt: 'Отзыв родителя 8' },
+  { src: '/gallery/parent-reviews/review-09.jpg', alt: 'Отзыв родителя 9' },
+  { src: '/gallery/parent-reviews/review-10.jpg', alt: 'Отзыв родителя 10' },
+  { src: '/gallery/parent-reviews/review-11.jpg', alt: 'Отзыв родителя 11' },
+  { src: '/gallery/parent-reviews/review-12.jpg', alt: 'Отзыв родителя 12' },
 ];
 
-const lessonExamples = [
-  'Русский язык: правило через короткую историю и карточки-подсказки',
-  'Математика: задача по шагам, схема, вычисления и проверка ответа',
-  'Мини-диктант или тренировка примеров с мягким разбором ошибок',
-  'План домашней тренировки на 10 минут в день',
+const lessonCategories: GalleryCategory[] = [
+  {
+    id: 'math',
+    title: 'Математика',
+    emptyText: 'Примеры уроков по математике скоро появятся.',
+    items: [
+      {
+        title: 'Математика',
+        images: [
+          {
+            src: '/gallery/lesson-examples/math-sofia-grade-4.png',
+            alt: 'Пример урока по математике с Софьей',
+          },
+          {
+            src: '/gallery/lesson-examples/math-pair-grade-3.jpg',
+            alt: 'Пример парного занятия по математике',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'russian',
+    title: 'Русский язык',
+    emptyText: 'Примеры уроков по русскому языку скоро появятся.',
+    items: [
+      {
+        title: 'Русский язык',
+        images: [
+          {
+            src: '/gallery/lesson-examples/russian-dasha-grade-3.png',
+            alt: 'Пример урока по русскому языку с Дашей',
+          },
+          {
+            src: '/gallery/lesson-examples/russian-semen-grade-2.png',
+            alt: 'Пример урока по русскому языку с Семеном',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'handwriting',
+    title: 'Коррекция почерка',
+    emptyText: 'Примеры уроков по коррекции почерка пока готовятся.',
+    items: [],
+  },
+  {
+    id: 'templates',
+    title: 'Шаблоны',
+    emptyText: 'Шаблоны уроков скоро появятся.',
+    items: [
+      {
+        title: 'Шаблоны уроков',
+        images: [
+          { src: '/gallery/lesson-examples/template-01.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-02.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-03.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-04.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-05.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-06.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-07.jpg', alt: 'Шаблон урока' },
+          { src: '/gallery/lesson-examples/template-08.jpg', alt: 'Шаблон урока' },
+        ],
+      },
+    ],
+  },
 ];
 
 const educationExperienceStartYear = 2021;
@@ -57,11 +176,23 @@ const educationExperienceYears = new Date().getFullYear() - educationExperienceS
 const cabinetExampleLink = 'Пример личного кабинета ученика';
 const phone = '89803781258';
 const phoneHref = `tel:${phone}`;
-const offerDocumentHref = 'https://docs.google.com/document/d/PASTE_DOCUMENT_ID_HERE/edit';
+const offerDocumentHref = '/documents/dogovor-oferta-09-05-2026.docx';
+const offerDocumentName = 'ДОГОВОР-ОФЕРТА ДЛЯ ВСЕХ 09 05 2026 как на сайте.docx';
 
 const revealStyle = (delay: number) => ({ '--reveal-delay': `${delay}ms` }) as CSSProperties;
 
 export default function App() {
+  const [activeCaseCategory, setActiveCaseCategory] = useState(studentCaseCategories[0].id);
+  const [activeLessonCategory, setActiveLessonCategory] = useState(lessonCategories[0].id);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [reviewIndex, setReviewIndex] = useState(0);
+
+  const currentCaseCategory =
+    studentCaseCategories.find((category) => category.id === activeCaseCategory) ?? studentCaseCategories[0];
+  const currentLessonCategory =
+    lessonCategories.find((category) => category.id === activeLessonCategory) ?? lessonCategories[0];
+  const currentReview = reviewImages[reviewIndex];
+
   useEffect(() => {
     const revealItems = document.querySelectorAll<HTMLElement>('.reveal');
 
@@ -86,6 +217,89 @@ export default function App() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!selectedImage) {
+      return undefined;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [selectedImage]);
+
+  const showPreviousReview = () => {
+    setReviewIndex((current) => (current === 0 ? reviewImages.length - 1 : current - 1));
+  };
+
+  const showNextReview = () => {
+    setReviewIndex((current) => (current === reviewImages.length - 1 ? 0 : current + 1));
+  };
+
+  const renderTabs = (
+    categories: GalleryCategory[],
+    activeCategory: string,
+    onSelectCategory: (category: string) => void,
+    ariaLabel: string,
+  ) => (
+    <div className="gallery-tabs" role="tablist" aria-label={ariaLabel}>
+      {categories.map((category) => (
+        <button
+          className={category.id === activeCategory ? 'gallery-tab is-active' : 'gallery-tab'}
+          type="button"
+          role="tab"
+          aria-selected={category.id === activeCategory}
+          key={category.id}
+          onClick={() => onSelectCategory(category.id)}
+        >
+          {category.title}
+        </button>
+      ))}
+    </div>
+  );
+
+  const renderGallery = (category: GalleryCategory, emptyLabel: string) => {
+    if (category.items.length === 0) {
+      return (
+        <div className="gallery-empty" role="status">
+          <p>{category.emptyText}</p>
+        </div>
+      );
+    }
+
+    return (
+      <div className="gallery-grid">
+        {category.items.map((item) => (
+          <article className="gallery-card" key={item.title}>
+            <h3>{item.title}</h3>
+            <div className="photo-grid">
+              {item.images.map((image) => (
+                <button
+                  className="photo-button"
+                  type="button"
+                  key={image.src}
+                  onClick={() => setSelectedImage(image)}
+                  aria-label={`${emptyLabel}: открыть изображение`}
+                >
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                </button>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <main>
@@ -140,7 +354,8 @@ export default function App() {
             <span>русский + математика</span>
             <span>индивидуальный формат</span>
             <span>параллельный формат</span>
-            <span>минигрупповой формат</span>
+            <span>парный формат</span>
+            <span>мини-групповой формат</span>
           </div>
         </div>
       </section>
@@ -171,15 +386,8 @@ export default function App() {
           <p className="eyebrow">маленькие победы</p>
           <h2 id="cases-title">Кейсы учеников</h2>
         </div>
-        <div className="case-grid">
-          {studentCases.map((item, index) => (
-            <article className="case-card reveal" style={revealStyle(130 + index * 75)} key={item.title}>
-              <span>{item.mark}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
+        {renderTabs(studentCaseCategories, activeCaseCategory, setActiveCaseCategory, 'Категории кейсов учеников')}
+        {renderGallery(currentCaseCategory, 'Кейс ученика')}
       </section>
 
       <div className="between-section between-section-right" aria-hidden="true">
@@ -189,13 +397,35 @@ export default function App() {
       <section className="section reviews reveal" aria-labelledby="reviews-title">
         <img className="decor decor-heart reveal reveal-pop" style={revealStyle(260)} src={heartImage} alt="" aria-hidden="true" />
         <div className="section-heading reveal" style={revealStyle(80)}>
-          <p className="eyebrow">пока демонстрационные</p>
+          <p className="eyebrow">мнение родителей</p>
           <h2 id="reviews-title">Отзывы</h2>
         </div>
-        <div className="review-grid">
-          {reviews.map((review, index) => (
-            <blockquote className="reveal" style={revealStyle(130 + index * 75)} key={review}>{review}</blockquote>
-          ))}
+        <div className="reviews-carousel reveal" style={revealStyle(130)}>
+          <button className="carousel-button" type="button" onClick={showPreviousReview} aria-label="Предыдущий отзыв">
+            ‹
+          </button>
+          <button
+            className="review-photo"
+            type="button"
+            onClick={() => setSelectedImage(currentReview)}
+            aria-label="Открыть отзыв"
+          >
+            <img src={currentReview.src} alt={currentReview.alt} loading="lazy" />
+          </button>
+          <button className="carousel-button" type="button" onClick={showNextReview} aria-label="Следующий отзыв">
+            ›
+          </button>
+          <div className="review-dots" aria-label="Выбор отзыва">
+            {reviewImages.map((review, index) => (
+              <button
+                type="button"
+                className={index === reviewIndex ? 'review-dot is-active' : 'review-dot'}
+                key={review.src}
+                onClick={() => setReviewIndex(index)}
+                aria-label={`Показать отзыв ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -209,8 +439,8 @@ export default function App() {
             или скачать в удобном формате.
           </p>
         </div>
-        <a className="secondary-button" href={offerDocumentHref} target="_blank" rel="noreferrer">
-          Открыть договор-оферту
+        <a className="secondary-button" href={offerDocumentHref} download={offerDocumentName}>
+          Скачать договор-оферту
         </a>
       </section>
 
@@ -219,6 +449,7 @@ export default function App() {
           <p className="eyebrow">как проходит занятие</p>
           <h2 id="lessons-title">Примеры моих уроков</h2>
         </div>
+        {renderTabs(lessonCategories, activeLessonCategory, setActiveLessonCategory, 'Категории примеров уроков')}
         <div className="lessons-showcase">
           <div className="laptop reveal" style={revealStyle(140)} aria-label="Заглушка изображения урока на ноутбуке">
             <div className="laptop-screen">
@@ -230,14 +461,7 @@ export default function App() {
             </div>
             <div className="laptop-base" />
           </div>
-          <div className="lesson-list">
-            {lessonExamples.map((lesson, index) => (
-              <article className="lesson-card reveal" style={revealStyle(170 + index * 65)} key={lesson}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <p>{lesson}</p>
-              </article>
-            ))}
-          </div>
+          {renderGallery(currentLessonCategory, 'Пример урока')}
         </div>
       </section>
 
@@ -277,11 +501,22 @@ export default function App() {
           <a className="primary-button" href={phoneHref}>{phone}</a>
         </div>
         <nav className="footer-links" aria-label="Ссылки в футере">
-          <a href={offerDocumentHref} target="_blank" rel="noreferrer">Оферта</a>
+          <a href={offerDocumentHref} download={offerDocumentName}>Оферта</a>
           <a href="#lessons">Примеры уроков</a>
           <a href="#cabinets-title">Личные кабинеты</a>
         </nav>
       </footer>
+      {selectedImage && (
+        <div className="image-modal" role="dialog" aria-modal="true" aria-label="Увеличенное изображение">
+          <button className="image-modal-backdrop" type="button" onClick={() => setSelectedImage(null)} aria-label="Закрыть" />
+          <div className="image-modal-content">
+            <button className="image-modal-close" type="button" onClick={() => setSelectedImage(null)} aria-label="Закрыть">
+              ×
+            </button>
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
