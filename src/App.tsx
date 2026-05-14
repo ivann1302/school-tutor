@@ -100,6 +100,9 @@ const reviewImages: GalleryImage[] = [
   { src: '/gallery/parent-reviews/review-10.jpg', alt: 'Отзыв родителя 10' },
   { src: '/gallery/parent-reviews/review-11.jpg', alt: 'Отзыв родителя 11' },
   { src: '/gallery/parent-reviews/review-12.jpg', alt: 'Отзыв родителя 12' },
+  { src: '/gallery/parent-reviews/review-21.jpg', alt: 'Отзыв родителя 13' },
+  { src: '/gallery/parent-reviews/review-22.jpg', alt: 'Отзыв родителя 14' },
+  { src: '/gallery/parent-reviews/review-23.jpg', alt: 'Отзыв родителя 15' },
 ];
 
 const lessonCategories: GalleryCategory[] = [
@@ -173,10 +176,10 @@ const lessonCategories: GalleryCategory[] = [
 
 const educationExperienceStartYear = 2021;
 const educationExperienceYears = new Date().getFullYear() - educationExperienceStartYear;
-const cabinetExampleLink = 'Пример личного кабинета ученика';
+const cabinetExampleLink = <a href='http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH' target='noopener'>Нажми на меня</a>
 const phone = '89803781258';
 const phoneHref = `tel:${phone}`;
-const offerDocumentHref = '/documents/dogovor-oferta-09-05-2026.docx';
+const offerDocumentHref = <a href='http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH' ></a>
 const offerDocumentName = 'ДОГОВОР-ОФЕРТА ДЛЯ ВСЕХ 09 05 2026 как на сайте.docx';
 
 const revealStyle = (delay: number) => ({ '--reveal-delay': `${delay}ms` }) as CSSProperties;
