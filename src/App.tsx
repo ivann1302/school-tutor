@@ -176,10 +176,10 @@ const lessonCategories: GalleryCategory[] = [
 
 const educationExperienceStartYear = 2021;
 const educationExperienceYears = new Date().getFullYear() - educationExperienceStartYear;
-const cabinetExampleLink = <a href='http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH' target='noopener'>Нажми на меня</a>
+const cabinetExampleHref = 'http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH';
 const phone = '89803781258';
 const phoneHref = `tel:${phone}`;
-const offerDocumentHref = <a href='http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH' ></a>
+const offerDocumentHref = 'http://buildin.ai/share/d9e2aebb-7dfd-475c-87ee-dda5e80911c4?code=M6K3QH';
 const offerDocumentName = 'ДОГОВОР-ОФЕРТА ДЛЯ ВСЕХ 09 05 2026 как на сайте.docx';
 
 const revealStyle = (delay: number) => ({ '--reveal-delay': `${delay}ms` }) as CSSProperties;
@@ -464,8 +464,8 @@ export default function App() {
           <h2 id="cabinets-title">Личный кабинет ученика</h2>
         </div>
         <div className="cabinet-grid single-cabinet">
-          <a className="cabinet-card reveal" style={revealStyle(130)} href={phoneHref}>
-            <span>{cabinetExampleLink}</span>
+          <a className="cabinet-card reveal" style={revealStyle(130)} href={cabinetExampleHref} target="_blank" rel="noopener noreferrer">
+            <span>Нажми на меня</span>
             <small>материалы, задания и динамика занятий собраны в одном месте, чтобы родителям было удобно отслеживать прогресс ребенка</small>
           </a>
         </div>
