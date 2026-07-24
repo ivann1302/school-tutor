@@ -7,7 +7,6 @@ import phoneImage from './assets/images/optimized/tutor-phone.webp';
 import planeImage from './assets/images/optimized/tutor-plane.webp';
 import sectionPlaneImage from './assets/images/optimized/section-plane.webp';
 import starImage from './assets/images/optimized/tutor-star.webp';
-import tutorFaceImage from './assets/images/optimized/tutor-face.webp';
 
 type GalleryImage = {
   src: string;
@@ -85,6 +84,27 @@ const supportAreas = [
   'почерк, аккуратность и оформление в тетради',
   'домашние задания без ежедневных споров',
   'подготовка к контрольным и ВПР',
+];
+
+const multiplicationMaterials: Array<GalleryImage & { title: string; caption: string }> = [
+  {
+    src: '/multiplication/diplom.jpg',
+    alt: 'Сертификат Ирины Витальевны по программе «Таблица умножения за 12 занятий»',
+    title: 'Диплом',
+    caption: 'Подготовка по специальной программе',
+  },
+  {
+    src: '/multiplication/how.jpg',
+    alt: 'Примеры игровых уроков по таблице умножения с мнемотехникой',
+    title: 'Примеры уроков',
+    caption: 'Образы, истории и задания вместо зубрёжки',
+  },
+  {
+    src: '/multiplication/cases.png',
+    alt: 'Результаты учеников после курса по таблице умножения',
+    title: 'Кейсы учеников',
+    caption: 'Заметный результат к итоговому тестированию',
+  },
 ];
 
 const reviewImages: GalleryImage[] = [
@@ -195,6 +215,20 @@ export default function App() {
   const currentLessonCategory =
     lessonCategories.find((category) => category.id === activeLessonCategory) ?? lessonCategories[0];
   const currentReview = reviewImages[reviewIndex];
+
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+
+    if (!sectionId) {
+      return undefined;
+    }
+
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView();
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   useEffect(() => {
     const revealItems = document.querySelectorAll<HTMLElement>('.reveal');
@@ -313,6 +347,7 @@ export default function App() {
         <nav className="nav" aria-label="Основная навигация">
           <a href="#about">Обо мне</a>
           <a href="#support">Для кого</a>
+          <a href="#multiplication">12 уроков</a>
           <a href="#cases">Кейсы</a>
           <a href="#lessons">Уроки</a>
           <a href="#offer">Оферта</a>
@@ -340,7 +375,7 @@ export default function App() {
         </div>
         <div className="hero-card hero-about reveal" id="about" style={revealStyle(190)}>
           <div className="portrait">
-            <img src={tutorFaceImage} alt="Ирина Витальевна" />
+            <img src="/multiplication/hero.jpg" alt="Ирина Витальевна" />
           </div>
           <div>
             <p className="scribble">обо мне</p>
@@ -378,6 +413,58 @@ export default function App() {
             <article className="support-card reveal" style={revealStyle(120 + index * 55)} key={area}>
               <span aria-hidden="true">♡</span>
               <p>{area}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="section multiplication reveal"
+        id="multiplication"
+        aria-labelledby="multiplication-title"
+      >
+        <div className="multiplication-intro">
+          <div className="section-heading wide reveal" style={revealStyle(80)}>
+            <p className="eyebrow">специальная программа</p>
+            <h2 id="multiplication-title">
+              Таблица умножения <span>за 12 уроков</span>
+            </h2>
+          </div>
+          <div className="multiplication-copy reveal" style={revealStyle(130)}>
+            <p>
+              Всего за 12 занятий ваш ребёнок легко и без зубрёжки запомнит таблицу
+              умножения. Секрет — в мнемотехнике: каждый сложный пример оживает через
+              образ, короткий стишок или забавную историю. В комплекте — рабочие листы
+              для домашней отработки и дополнительные материалы для закрепления.
+              Вместо скучного заучивания — яркие сюжеты и понятные ассоциации.
+              Результат виден уже через несколько уроков!
+            </p>
+            <div className="multiplication-tags" aria-label="Особенности программы">
+              <span>без зубрёжки</span>
+              <span>мнемотехника</span>
+              <span>рабочие листы</span>
+            </div>
+          </div>
+        </div>
+        <div className="multiplication-gallery">
+          {multiplicationMaterials.map((material, index) => (
+            <article
+              className="multiplication-card reveal"
+              style={revealStyle(170 + index * 70)}
+              key={material.src}
+            >
+              <button
+                className="multiplication-photo"
+                type="button"
+                onClick={() => setSelectedImage(material)}
+                aria-label={`${material.title}: открыть изображение`}
+              >
+                <img src={material.src} alt={material.alt} loading="lazy" />
+              </button>
+              <div>
+                <h3>{material.title}</h3>
+                <p>{material.caption}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -495,10 +582,16 @@ export default function App() {
         </div>
         <nav className="footer-links" aria-label="Ссылки в футере">
           <a href={offerDocumentHref} download={offerDocumentName}>Оферта</a>
+          <a href="#multiplication">Таблица умножения</a>
           <a href="#lessons">Примеры уроков</a>
           <a href="#cabinets-title">Личные кабинеты</a>
         </nav>
       </footer>
+      <div className="developer-credit">
+        <a href="https://project42-studio.ru/" target="_blank" rel="noopener noreferrer">
+          сайт разработан project 42
+        </a>
+      </div>
       {selectedImage && (
         <div className="image-modal" role="dialog" aria-modal="true" aria-label="Увеличенное изображение">
           <button className="image-modal-backdrop" type="button" onClick={() => setSelectedImage(null)} aria-label="Закрыть" />
