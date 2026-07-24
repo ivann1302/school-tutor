@@ -1513,6 +1513,19 @@ code {
     font-size: 15px;
   }
 
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stats-grid span {
+    min-width: 0;
+    min-height: 52px;
+    padding: 12px 7px;
+    font-size: clamp(12px, 3.5vw, 14px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
   .support {
     padding-left: 56px;
   }
