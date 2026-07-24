@@ -1519,6 +1519,7 @@ code {
 
   .footer {
     padding-left: 62px;
+    margin-bottom: 8px;
   }
 
   h1 {
@@ -1611,6 +1612,14 @@ code {
 
   .soft-note {
     width: 100%;
+  }
+
+  .developer-credit {
+    padding: 0 12px 10px;
+  }
+
+  .developer-credit a {
+    font-size: 11px;
   }
 }
 
