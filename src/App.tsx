@@ -208,6 +208,8 @@ export default function App() {
   const [activeCaseCategory, setActiveCaseCategory] = useState(studentCaseCategories[0].id);
   const [activeLessonCategory, setActiveLessonCategory] = useState(lessonCategories[0].id);
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [isModalCloseVisible, setIsModalCloseVisible] = useState(false);
+  const [isModalImageZoomed, setIsModalImageZoomed] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
 
   const currentCaseCategory =
@@ -283,6 +285,12 @@ export default function App() {
     setReviewIndex((current) => (current === reviewImages.length - 1 ? 0 : current + 1));
   };
 
+  const openImage = (image: GalleryImage) => {
+    setIsModalCloseVisible(false);
+    setIsModalImageZoomed(false);
+    setSelectedImage(image);
+  };
+
   const renderTabs = (
     categories: GalleryCategory[],
     activeCategory: string,
@@ -325,7 +333,7 @@ export default function App() {
                   className="photo-button"
                   type="button"
                   key={image.src}
-                  onClick={() => setSelectedImage(image)}
+                  onClick={() => openImage(image)}
                   aria-label={`${emptyLabel}: открыть изображение`}
                 >
                   <img src={image.src} alt={image.alt} loading="lazy" />
@@ -456,7 +464,7 @@ export default function App() {
               <button
                 className="multiplication-photo"
                 type="button"
-                onClick={() => setSelectedImage(material)}
+                onClick={() => openImage(material)}
                 aria-label={`${material.title}: открыть изображение`}
               >
                 <img src={material.src} alt={material.alt} loading="lazy" />
@@ -497,7 +505,7 @@ export default function App() {
           <button
             className="review-photo"
             type="button"
-            onClick={() => setSelectedImage(currentReview)}
+            onClick={() => openImage(currentReview)}
             aria-label="Открыть отзыв"
           >
             <img src={currentReview.src} alt={currentReview.alt} loading="lazy" />
@@ -593,14 +601,32 @@ export default function App() {
         </a>
       </div>
       {selectedImage && (
-        <div className="image-modal" role="dialog" aria-modal="true" aria-label="Увеличенное изображение">
+        <div
+          className={`image-modal${isModalImageZoomed ? ' is-image-zoomed' : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Увеличенное изображение"
+        >
           <button className="image-modal-backdrop" type="button" onClick={() => setSelectedImage(null)} aria-label="Закрыть" />
-          <div className="image-modal-content">
+          <div className={`image-modal-content${isModalCloseVisible ? ' is-close-visible' : ''}`}>
             <button className="image-modal-close" type="button" onClick={() => setSelectedImage(null)} aria-label="Закрыть">
               ×
             </button>
-            <img src={selectedImage.src} alt={selectedImage.alt} />
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              onClick={() => setIsModalCloseVisible((isVisible) => !isVisible)}
+            />
           </div>
+          <button
+            className="image-modal-zoom"
+            type="button"
+            aria-label={isModalImageZoomed ? 'Уменьшить изображение' : 'Увеличить изображение'}
+            aria-pressed={isModalImageZoomed}
+            onClick={() => setIsModalImageZoomed((isZoomed) => !isZoomed)}
+          >
+            {isModalImageZoomed ? '−' : '+'}
+          </button>
         </div>
       )}
     </main>

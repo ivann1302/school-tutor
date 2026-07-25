@@ -356,7 +356,7 @@ small {
   width: 100%;
   height: clamp(200px, 30vh, 250px);
   object-fit: cover;
-  object-position: center 31%;
+  object-position: center 38%;
 }
 
 .hero-about h2 {
@@ -915,6 +915,10 @@ blockquote {
   transition: transform 220ms ease;
 }
 
+.photo-button img {
+  object-fit: contain;
+}
+
 .photo-button:hover img,
 .review-photo:hover img {
   transform: scale(1.03);
@@ -950,8 +954,9 @@ blockquote {
 }
 
 .review-photo {
+  display: grid;
   overflow: hidden;
-  max-height: 680px;
+  place-items: center;
   border: 1px solid rgba(244, 223, 223, 0.9);
   border-radius: 28px;
   background: #ffffff;
@@ -959,6 +964,8 @@ blockquote {
 }
 
 .review-photo img {
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: 680px;
   object-fit: contain;
@@ -1062,6 +1069,25 @@ blockquote {
   font-weight: 900;
   line-height: 1;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.84);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.image-modal-zoom {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .image-modal-content:hover .image-modal-close,
+  .image-modal-close:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
 }
 
 .offer {
@@ -1481,6 +1507,10 @@ code {
     padding-top: 12px;
   }
 
+  .portrait img {
+    object-position: center 50%;
+  }
+
   .hero-copy {
     padding: 20px 20px 20px 46px;
   }
@@ -1590,6 +1620,65 @@ code {
   .image-modal-close {
     top: 8px;
     right: 8px;
+  }
+
+  .image-modal-content img {
+    cursor: pointer;
+    touch-action: pan-x pan-y pinch-zoom;
+  }
+
+  .image-modal-content.is-close-visible .image-modal-close {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+  }
+
+  .image-modal-zoom {
+    position: fixed;
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    z-index: 3;
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--yellow-strong);
+    color: #3b3634;
+    cursor: pointer;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+  }
+
+  .image-modal.is-image-zoomed {
+    display: block;
+    overflow: auto;
+  }
+
+  .image-modal.is-image-zoomed .image-modal-backdrop {
+    position: fixed;
+  }
+
+  .image-modal.is-image-zoomed .image-modal-content {
+    width: min(1100px, 300vw);
+    max-width: none;
+    max-height: none;
+    margin: 54px 0 82px;
+  }
+
+  .image-modal.is-image-zoomed .image-modal-content img {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
+
+  .image-modal.is-image-zoomed .image-modal-close {
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top));
+    right: 12px;
   }
 
   .decor-arrow,
